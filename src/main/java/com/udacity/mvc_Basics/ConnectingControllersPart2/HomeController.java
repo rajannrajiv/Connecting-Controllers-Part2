@@ -15,7 +15,7 @@ public class HomeController {
     }
 
     @GetMapping("/home")
-    public String getHomePage(@ModelAttribute MessageForm newMessage, Model model)
+    public String getHomePage(@ModelAttribute("newMessage") MessageForm newMessage, Model model)
 {
     model.addAttribute("greetings", this.messageListservice.getMessages());
     return "home";
